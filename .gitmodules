@@ -1,0 +1,3 @@
+[submodule "vendor/submodules/openshift-redis"]
+	path = vendor/submodules/openshift-redis
+	url = git://github.com/seawolf/openshift-redis.git
