@@ -6,7 +6,7 @@
 for CONFIG_FILE in diaspora.yml database.yml ; do
   if [[ -r $CONFIG_FILE ]]; then
     echo "Copying $CONFIG_FILE ..."
-    cp app-root/data/$CONFIG_FILE app-root/repo/config/
+    cp $OPENSHIFT_DATA_DIR/$CONFIG_FILE $OPENSHIFT_REPO_DIR/config/
   else
     echo "Cannot find the $CONFIG_FILE -- your application won't boot correctly!"
   fi
