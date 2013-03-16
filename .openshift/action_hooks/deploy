@@ -1,0 +1,13 @@
+#!/bin/bash
+# .openshift/action_hooks/deploy
+# This script will be executed after the code is built and deployed,
+# before the application is started.
+
+for CONFIG_FILE in diaspora.yml database.yml ; do
+  if [[ -r $CONFIG_FILE ]]; then
+    echo "Copying $CONFIG_FILE ..."
+    cp $CONFIG_FILE app-root/repo/config/
+  else
+    echo "Cannot find the $CONFIG_FILE -- your application won't boot correctly!"
+  fi
+done
