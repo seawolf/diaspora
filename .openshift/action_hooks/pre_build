@@ -2,8 +2,8 @@
 # This script will be executed while your application is stopped
 # before the build step.
 
-STORED_ASSETS="${OPENSHIFT_DATA_DIR}/assets"
-LIVE_ASSETS="${OPENSHIFT_REPO_DIR}/public/assets"
+STORED_ASSETS="${OPENSHIFT_DATA_DIR}assets"
+LIVE_ASSETS="${OPENSHIFT_REPO_DIR}public/assets"
 
 # Ensure our stored assets directory exists
 echo -n "Checking for permanently-used assets cache at $STORED_ASSETS ... "
