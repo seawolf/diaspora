@@ -21,7 +21,7 @@ else
 fi
 
 REDIS_PID=$(pidof redis-server)
-if [[ -z "$REDIS_PID" ]];
+if [[ -z "$REDIS_PID" ]]; then
   echo "Starting Redis server... "
   cd $OPENSHIFT_DATA_DIR/redis/bin && ./redis-server redis.conf
 else
