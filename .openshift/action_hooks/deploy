@@ -11,3 +11,5 @@ for CONFIG_FILE in diaspora.yml database.yml ; do
     echo "Cannot find the $CONFIG_FILE -- your application won't boot correctly!"
   fi
 done
+
+cp $OPENSHIFT_DATA_DIR/splash.html.haml $OPENSHIFT_REPO_DIR/app/views/home/_show.html.haml
