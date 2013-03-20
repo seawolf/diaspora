@@ -10,6 +10,8 @@ echo -n "Checking for permanently-used assets cache at $STORED_ASSETS ... "
 if [ ! -d "${STORED_ASSETS}" ]; then
   echo "not found, creating"
   mkdir "${STORED_ASSETS}"
+else
+  echo "found."
 fi
 
 # Create symlink to stored assets unless we're uploading our own assets
