@@ -4,12 +4,19 @@
 # before the application is started.
 
 for CONFIG_FILE in diaspora.yml database.yml ; do
-  if [[ -r $CONFIG_FILE ]]; then
-    echo "Copying $CONFIG_FILE ..."
+  echo -n "Checking for $OPENSHIFT_DATA_DIR/$CONFIG_FILE ..."
+  if [[ -r $OPENSHIFT_DATA_DIR/$CONFIG_FILE ]]; then
+    echo " found, copying to $OPENSHIFT_REPO_DIR/config/$CONFIG_FILE"
     cp $OPENSHIFT_DATA_DIR/$CONFIG_FILE $OPENSHIFT_REPO_DIR/config/
   else
-    echo "Cannot find the $CONFIG_FILE -- your application won't boot correctly!"
+    echo "not found -- your application won't boot correctly!"
   fi
 done
 
-cp $OPENSHIFT_DATA_DIR/splash.html.haml $OPENSHIFT_REPO_DIR/app/views/home/_show.html.haml
+echo -n "Checking for $OPENSHIFT_DATA_DIR/splash.html.haml ..."
+if [[ -r $OPENSHIFT_DATA_DIR/splash.html.haml ]]; then
+  echo "found, copying to $OPENSHIFT_REPO_DIR/app/views/home/_show.html.haml"
+  cp $OPENSHIFT_DATA_DIR/splash.html.haml $OPENSHIFT_REPO_DIR/app/views/home/_show.html.haml
+else
+  echo "not found -- the default splash screen will be used"
+fi
