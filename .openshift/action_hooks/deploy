@@ -1,5 +1,4 @@
 #!/bin/bash
-# .openshift/action_hooks/deploy
 # This script will be executed after the code is built and deployed,
 # before the application is started.
 

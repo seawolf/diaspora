@@ -1,10 +1,6 @@
 #!/bin/bash
-# This is a simple build script and will be executed on your CI system if
-# available.  Otherwise it will execute while your application is stopped
-# before the deploy step.  This script gets executed directly, so it
-# could be python, php, ruby, etc.
-
-#!/bin/bash
+# This build script will be executed while your application is stopped
+# before the deploy step.
 
 REDIS_VERSION=2.4.12
 MAKE_IS_DONE="no"
@@ -32,7 +28,7 @@ if [ "$MAKE_IS_DONE" == "yes" ]; then
 > daemonize yes
 21,22c21
 < pidfile /var/run/redis.pid
-< 
+<
 ---
 > pidfile ${OPENSHIFT_RUN_DIR}redis.pid
 24c24
