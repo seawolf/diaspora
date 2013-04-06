@@ -129,6 +129,7 @@ group :production do # we don't install these on travis to speed up test runs
 
   gem 'rack-google-analytics', '0.11.0', :require => 'rack/google-analytics'
   gem 'rack-piwik',            '0.1.3',  :require => 'rack/piwik'
+  gem 'newrelic_rpm'
 
   # Click-jacking protection
 
