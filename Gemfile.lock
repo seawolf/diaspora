@@ -229,6 +229,7 @@ GEM
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
     kgio (2.9.2)
+    libv8 (3.16.14.7)
     listen (2.7.5)
       celluloid (>= 0.15.2)
       rb-fsevent (>= 0.9.3)
@@ -365,6 +366,7 @@ GEM
     redis (3.1.0)
     redis-namespace (1.5.1)
       redis (~> 3.0, >= 3.0.4)
+    ref (1.0.5)
     remotipart (1.2.1)
     roxml (3.1.6)
       activesupport (>= 2.3.0)
@@ -428,6 +430,9 @@ GEM
     subexec (0.2.3)
     systemu (2.5.2)
     test_after_commit (0.2.3)
+    therubyracer (0.12.1)
+      libv8 (~> 3.16.14.0)
+      ref
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
@@ -544,6 +549,7 @@ DEPENDENCIES
   spork (= 1.0.0rc4)
   strong_parameters (= 0.2.3)
   test_after_commit (= 0.2.3)
+  therubyracer
   timecop (= 0.7.1)
   twitter (= 4.8.1)
   typhoeus (= 0.6.8)

@@ -138,7 +138,7 @@ group :assets do
   #
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 
-  # gem 'therubyracer', :platform => :ruby
+  gem 'therubyracer', :platform => :ruby
 end
 
 group :production do # we don't install these on travis to speed up test runs
