@@ -14,8 +14,8 @@ timeout AppConfig.server.unicorn_timeout.to_i
 
 @sidekiq_pid = nil
 
-#pid '/var/run/diaspora/diaspora.pid'
-#listen '/var/run/diaspora/diaspora.sock', :backlog => 2048
+pid    '/home/diaspora/wwwroot/tmp/unicorn.pid'
+listen '/home/diaspora/wwwroot/tmp/unicorn.sock', :backlog => 2048
 
 
 stderr_path AppConfig.server.stderr_log.get if AppConfig.server.stderr_log.present?
@@ -29,12 +29,12 @@ before_fork do |server, worker|
   unless AppConfig.single_process_mode?
     Sidekiq.redis {|redis| redis.client.disconnect }
   end
-  
+
   if AppConfig.server.embed_sidekiq_worker?
     @sidekiq_pid ||= spawn('bundle exec sidekiq')
   end
 
-  old_pid = '/var/run/diaspora/diaspora.pid.oldbin'
+  old_pid = '/home/diaspora/wwwroot/tmp/unicorn.pid.oldbin'
   if File.exists?(old_pid) && server.pid != old_pid
     begin
       Process.kill("QUIT", File.read(old_pid).to_i)
