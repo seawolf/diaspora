@@ -16,8 +16,6 @@ Diaspora::Application.routes.draw do
     mount Sidekiq::Web => '/sidekiq', :as => 'sidekiq'
   end
 
-  get "/atom.xml" => redirect('http://blog.diasporafoundation.org/feed/atom') #too many stupid redirects :()
-
   get 'oembed' => 'posts#oembed', :as => 'oembed'
   # Posting and Reading
   resources :reshares
@@ -216,9 +214,6 @@ Diaspora::Application.routes.draw do
 
   # help
   get 'help' => 'help#faq', :as => 'help'
-
-  #Protocol Url
-  get 'protocol' => redirect("http://wiki.diasporafoundation.org/Federation_Protocol_Overview")
 
   #Statistics
   get :statistics, controller: :statistics
