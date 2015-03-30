@@ -5,6 +5,7 @@ gem 'rails', '3.2.20'
 # Appserver
 
 gem 'unicorn', '4.8.3', :require => false
+gem 'newrelic_rpm', '~> 3.11.0.0'
 
 # API and JSON
 

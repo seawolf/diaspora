@@ -16,6 +16,7 @@ vendor/cache/
 config/database.yml
 .rvmrc_custom
 .rvmrc.local
+config/newrelic.yml
 
 #Mailing list stuff
 config/email_offset
