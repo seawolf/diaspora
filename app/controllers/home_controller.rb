@@ -7,20 +7,8 @@ class HomeController < ApplicationController
     partial_dir = Rails.root.join('app', 'views', 'home')
     if user_signed_in?
       redirect_to stream_path
-    elsif is_mobile_device?
-      if partial_dir.join('_show.mobile.haml').exist? ||
-         partial_dir.join('_show.mobile.erb').exist?
-        render :show
-      else
-        redirect_to user_session_path
-      end
-    elsif partial_dir.join("_show.html.haml").exist? ||
-          partial_dir.join("_show.html.erb").exist?
-      render :show
     else
-      @css_framework = :bootstrap # Hack, port site to one framework
-      render file: Rails.root.join("public", "default.html"),
-             layout: 'application'
+      redirect_to user_profile_path('ben')
     end
   end
 

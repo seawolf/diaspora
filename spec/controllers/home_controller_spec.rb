@@ -9,7 +9,7 @@ describe HomeController do
     it 'does not redirect' do
       sign_out :user
       get :show
-      response.should_not be_redirect
+      response.should redirect_to('/u/ben')
     end
 
     context 'redirection' do
