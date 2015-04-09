@@ -1,24 +1,62 @@
-/* Roboto */
+/* Ubuntu font, previously Roboto */
 @font-face {
-  font-family : Roboto;
-  src : image-url('fonts/Roboto-Regular.ttf');
-  weight : normal;
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 300;
+  src : image-url('fonts/Ubuntu-L.ttf');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: italic;
+  font-weight: 300;
+  src : image-url('fonts/Ubuntu-LI.ttf');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  src : image-url('fonts/Ubuntu-R.ttf');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: italic;
+  font-weight: 400;
+  src : image-url('fonts/Ubuntu-RI.ttf');
+}
+@font-face {
+  font-family: 'Ubuntu Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src : image-url('fonts/Ubuntu-C.ttf');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 500;
+  src : image-url('fonts/Ubuntu-M.ttf');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: italic;
+  font-weight: 500;
+  src : image-url('fonts/Ubuntu-MI.ttf');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  src : image-url('fonts/Ubuntu-B.ttf');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: italic;
+  font-weight: 700;
+  src : image-url('fonts/Ubuntu-BI.ttf');
 }
 
-@font-face {
-  font-family : Roboto-Bold;
-  src : image-url('fonts/Roboto-Bold.ttf');
-  weight : normal;
-}
-
-@font-face {
-  font-family : Roboto-Light;
-  src : image-url('fonts/Roboto-Light.ttf');
-  weight : normal;
-}
 
 body, p, h1, h2, h3, h4, h5, h6, textarea, input, * {
-  font-family : "Helvetica Neue", Helvetica, sans-serif;
+  font-family : Ubuntu, 'Helvetica Neue', Helvetica, sans-serif ! important;
   font-weight : normal;
 }
 

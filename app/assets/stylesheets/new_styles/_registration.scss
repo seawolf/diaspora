@@ -6,14 +6,16 @@
   color: #fff;
 
   #create-something-text {
-    font-family : Roboto-Light;
+    font-family : Ubuntu;
+    font-weight : 300;
     font-size : 100px;
     line-height : 100px;
     white-space : nowrap;
   }
 
   #diaspora-hearts {
-    font-family : Roboto-Light;
+    font-family : Ubuntu;
+    font-weight : 300;
     font-size : 24px;
     margin-top : 0.2em;
     margin-bottom : 1em;
@@ -21,7 +23,8 @@
   }
 
   #sign-up-text {
-    font-family : Roboto-Bold;
+    font-family : Ubuntu;
+    font-weight : bold;
     color : #7f9448;
     margin-bottom : 0.5em;
   }
@@ -42,7 +45,7 @@
     .controls {
       float : right;
     }
-    
+
     #terms > a {
       color: inherit;
       text-decoration: underline;

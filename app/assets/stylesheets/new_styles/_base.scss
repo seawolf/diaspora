@@ -97,7 +97,7 @@ $bring-dark-accent-forward-color: #DDD;
   }
 }
 
-/* bootstrap label fixes for Roboto */
+/* bootstrap label fixes for Ubuntu, previously Roboto */
 .label {
   padding : 2px 5px;
   padding-bottom : 3px;
@@ -106,7 +106,8 @@ $bring-dark-accent-forward-color: #DDD;
     display : inline-block;
     position : relative;
     top : 1px;
-    font-family : Roboto-Bold;
+    font-family : Ubuntu;
+    font-weight : bold;
   }
 }
 

@@ -1,11 +1,13 @@
 @font-face {
-	font-family:Roboto;
-	src: local("Roboto-Regular.ttf")
+	font-family: Ubuntu;
+	font-weight: normal;
+	src: local("Ubuntu-R.ttf")
 }
 
 @font-face {
-	font-family:Roboto-BoldCondensed;
-	src: local("Roboto-BoldCondensed.ttf")
+	font-family: Ubuntu;
+	font-weight: bold;
+	src: local("Ubuntu-B.ttf")
 }
 
 html {
@@ -19,7 +21,7 @@ body {
 	position: fixed;
 	bottom:0px;
 	margin: 0px;
-	font-family: Roboto, Helvetica, Arial, sans-serif;
+	font-family: Ubuntu, Helvetica, Arial, sans-serif;
 	text-align: center;
 	text-shadow: 0 1px 0 #fff;
 	color: #666;
@@ -27,7 +29,8 @@ body {
 }
 
 #big-number {
-  font-family: Roboto-BoldCondensed, Helvetica, Arial, sans-serif;
+  font-family: Ubuntu, Helvetica, Arial, sans-serif;
+  font-weight: bold;
   font-size: 250px;
   text-shadow: 0 2px 0 #fff, 0 -1px 0 #999;
   color: #ddd;
