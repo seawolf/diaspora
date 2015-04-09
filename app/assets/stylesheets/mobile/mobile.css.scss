@@ -21,6 +21,9 @@ body {
   }
   padding: 0px;
 }
+body, input, button, select, textarea {
+  font-family: Ubuntu, 'Helvetica Neue', Helvetica, Arial, sans-serif ! important;
+}
 
 h3 {
   margin-top: 0px;
