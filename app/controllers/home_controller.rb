@@ -4,7 +4,6 @@
 
 class HomeController < ApplicationController
   def show
-    partial_dir = Rails.root.join('app', 'views', 'home')
     if user_signed_in?
       redirect_to stream_path
     else

@@ -31,7 +31,7 @@ before_fork do |server, worker|
   end
 
   if AppConfig.server.embed_sidekiq_worker?
-    @sidekiq_pid ||= spawn('bundle exec sidekiq')
+    @sidekiq_pid ||= spawn('bin/bundle exec sidekiq')
   end
 
   old_pid = '/home/diaspora/wwwroot/tmp/unicorn.pid.oldbin'
