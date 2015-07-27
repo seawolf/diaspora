@@ -18,6 +18,10 @@ Diaspora::Application.routes.draw do
     mount Sidekiq::Web => '/sidekiq', :as => 'sidekiq'
   end
 
+  mount DiasporaFederation::Engine => "/"
+
+  get "/atom.xml" => redirect('http://blog.diasporafoundation.org/feed/atom') #too many stupid redirects :()
+
   get 'oembed' => 'posts#oembed', :as => 'oembed'
   # Posting and Reading
   resources :reshares
@@ -64,6 +68,9 @@ Diaspora::Application.routes.draw do
   resources :aspects do
     put :toggle_contact_visibility
     put :toggle_chat_privilege
+    collection do
+      put "order" => :update_order
+    end
   end
 
   get 'bookmarklet' => 'status_messages#bookmarklet'
@@ -89,7 +96,11 @@ Diaspora::Application.routes.draw do
 
   resources :tags, :only => [:index]
 
-  resources "tag_followings", :only => [:create, :destroy, :index]
+  resources "tag_followings", only: %i(create destroy index) do
+    collection do
+      get :manage
+    end
+  end
 
   get 'tags/:name' => 'tags#show', :as => 'tag'
 
@@ -182,9 +193,6 @@ Diaspora::Application.routes.draw do
   # Federation
 
   controller :publics do
-    get 'webfinger'             => :webfinger
-    get 'hcard/users/:guid'     => :hcard
-    get '.well-known/host-meta' => :host_meta
     post 'receive/users/:guid'  => :receive
     post 'receive/public'       => :receive_public
     get 'hub'                   => :hub
@@ -224,6 +232,9 @@ Diaspora::Application.routes.draw do
   # Help
   get 'help' => 'help#faq', :as => 'help'
   get 'help/:topic' => 'help#faq'
+
+  #Protocol Url
+  get 'protocol' => redirect("http://wiki.diasporafoundation.org/Federation_Protocol_Overview")
 
   #Statistics
   get :statistics, controller: :statistics

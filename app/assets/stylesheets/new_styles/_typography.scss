@@ -55,11 +55,7 @@
 }
 
 
-body, p, h1, h2, h3, h4, h5, h6, textarea, input, * {
-  font-family : Ubuntu, 'Helvetica Neue', Helvetica, sans-serif ! important;
+body, p, h1, h2, h3, h4, h5, h6, textarea, input {
+  font-family : Ubuntu, "Helvetica Neue", Helvetica, sans-serif;
   font-weight : normal;
-}
-
-a {
-  font-family : inherit;
 }
